@@ -1,0 +1,102 @@
+# SwiftFormat configuration for Docky
+# Lenient settings — only fix indentation and trailing whitespace.
+# Do NOT rewrite the existing code style.
+
+--swiftversion 5.9
+--indent 4
+
+# All structural rewrites are disabled; only trailing-whitespace cleanup is active.
+# The indent rule is also disabled because the project uses deliberate non-standard
+# indentation inside #if preprocessor blocks that SwiftFormat would rewrite incorrectly.
+--disable indent
+--disable trailingSpace
+--disable noForceUnwrapInTests
+--disable wrapPropertyBodies
+--disable wrapFunctionBodies
+--disable wrapLoopBodies
+--disable blankLinesBetweenImports
+--disable redundantViewBuilder
+--disable redundantOptionalBinding
+--disable redundantSendable
+--disable redundantVariable
+--disable spaceInsideComments
+--disable trailingClosures
+
+# Disable aggressive rewrites that would alter existing code style
+--disable redundantSelf
+--disable redundantReturn
+--disable redundantType
+--disable redundantNilInit
+--disable redundantVoidReturnType
+--disable redundantBackticks
+--disable redundantParens
+--disable redundantLetError
+--disable redundantObjc
+--disable redundantExtensionACL
+--disable redundantFileprivate
+--disable redundantInit
+--disable redundantClosure
+--disable wrapArguments
+--disable wrapAttributes
+--disable wrapMultilineStatementBraces
+--disable wrapConditionalBodies
+--disable trailingCommas
+--disable sortImports
+--disable unusedArguments
+--disable blankLinesBetweenScopes
+--disable blankLineAfterImports
+--disable blankLinesAroundMark
+--disable blankLinesAtEndOfScope
+--disable blankLinesAtStartOfScope
+--disable emptyBraces
+--disable consecutiveBlankLines
+--disable consecutiveSpaces
+--disable numberFormatting
+--disable initCoderUnavailable
+--disable noExplicitOwnership
+--disable enumNamespaces
+--disable extensionAccessControl
+--disable hoistAwait
+--disable hoistTry
+--disable hoistPatternLet
+--disable acronyms
+--disable andOperator
+--disable assertionFailures
+--disable blockComments
+--disable braces
+--disable docComments
+--disable elseOnSameLine
+--disable isEmpty
+--disable leadingDelimiters
+--disable linebreakAtEndOfFile
+--disable markTypes
+--disable modifierOrder
+--disable preferForLoop
+--disable preferKeyPath
+--disable semicolons
+--disable sortDeclarations
+--disable spaceAroundBraces
+--disable spaceAroundBrackets
+--disable spaceAroundComments
+--disable spaceAroundGenerics
+--disable spaceAroundOperators
+--disable spaceAroundParens
+--disable spaceInsideBraces
+--disable spaceInsideBrackets
+--disable spaceInsideGenerics
+--disable spaceInsideParens
+--disable strongOutlets
+--disable strongifiedSelf
+--disable todos
+--disable typeSugar
+--disable void
+--disable yodaConditions
+--disable opaqueGenericParameters
+--disable genericExtensions
+--disable conditionalAssignment
+--disable redundantProperty
+--disable redundantStaticSelf
+--disable docCommentsBeforeModifiers
+
+# Exclude generated / dependency directories
+--exclude .build,DerivedData,Pods,.swiftpm
