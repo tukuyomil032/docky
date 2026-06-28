@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on:
   push:
@@ -6,13 +6,12 @@ on:
   pull_request:
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: test-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-and-test:
-    name: Build & Test
-    # macos-15 ships Xcode 16.x; the project is objectVersion 77 (Xcode 16+).
+  test:
+    name: Test
     runs-on: macos-15
     steps:
       - name: Checkout
@@ -27,15 +26,6 @@ jobs:
         run: |
           xcodebuild -version
           swift --version
-
-      - name: Build
-        run: |
-          xcodebuild build \
-            -project Docky.xcodeproj \
-            -scheme Docky \
-            -configuration Debug \
-            -destination 'platform=macOS' \
-            CODE_SIGNING_ALLOWED=NO
 
       - name: Test
         run: |

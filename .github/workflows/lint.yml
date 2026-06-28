@@ -1,0 +1,27 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install SwiftLint and SwiftFormat
+        run: brew install swiftlint swiftformat
+
+      - name: SwiftLint
+        run: swiftlint lint --config .swiftlint.yml --strict
+
+      - name: SwiftFormat
+        run: swiftformat --lint --config .swiftformat Docky/ Tests/
