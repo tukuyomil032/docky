@@ -6,10 +6,6 @@
 import SwiftUI
 import AppKit
 
-// `DisplayLanguage` and `LanguageController` live in LanguageController.swift
-// so the selection/apply logic can be compiled into the test target without
-// pulling in this SwiftUI view.
-
 struct LanguageSettingsView: View {
     @State private var selection: DisplayLanguage
     @State private var showRelaunchPrompt = false
